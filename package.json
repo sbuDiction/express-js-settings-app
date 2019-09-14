@@ -1,0 +1,34 @@
+{
+  "name": "settings-bill-express-app",
+  "version": "1.0.0",
+  "description": "Express Js Settings App",
+  "main": "Settings-bill.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "chalk": "^2.4.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "jquery": "^3.4.1",
+    "mocha": "^6.2.0",
+    "moment": "^2.24.0",
+    "popper.js": "^1.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbuDiction/express-js-settings-app.git"
+  },
+  "author": "Sibusiso Nkosi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbuDiction/express-js-settings-app/issues"
+  },
+  "homepage": "https://github.com/sbuDiction/express-js-settings-app#readme"
+}
