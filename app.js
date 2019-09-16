@@ -2,7 +2,7 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const SettingsBill = require("./Settings-bill");
 const moment = require("moment");
-// moment().format();
+moment().format();
 const app = express();
 
 const helpers = {

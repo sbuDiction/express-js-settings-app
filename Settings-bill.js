@@ -22,17 +22,19 @@ module.exports = function() {
   };
 
   const bill = action => {
-    let cost = 0.0;
-    if (action == "sms") {
-      cost = smsCost;
-    } else if (action == "call") {
-      cost = callCost;
+    if (!stopAdding()) {
+      let cost = 0.0;
+      if (action == "sms") {
+        cost += smsCost;
+      } else if (action == "call") {
+        cost += callCost;
+      }
+      actionList.push({
+        type: action,
+        cost,
+        timestamp: new Date()
+      });
     }
-    actionList.push({
-      type: action,
-      cost,
-      timestamp: new Date()
-    });
   };
 
   const displayActions = () => {
@@ -63,14 +65,15 @@ module.exports = function() {
       grandTotal: grandTotal().toFixed(2)
     };
   };
+  const stopAdding = () => {
+    return grandTotal() >= criticalLevel;
+  };
 
   const whichLevel = () => {
     if (grandTotal() >= warningLevel && grandTotal() < criticalLevel) {
       return "warning";
     } else if (grandTotal() >= criticalLevel) {
       return "danger";
-    } else {
-      return "none";
     }
   };
 
@@ -83,6 +86,7 @@ module.exports = function() {
     getTotal,
     grandTotal,
     totals,
-    whichLevel
+    whichLevel,
+    stopAdding
   };
 };
